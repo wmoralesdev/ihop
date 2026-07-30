@@ -42,19 +42,23 @@ describe('history', () => {
   it('uses OS-standard local state locations', () => {
     expect(
       getHistoryPath({ platform: 'linux', env: {}, home: '/home/walter' }),
-    ).toBe('/home/walter/.local/state/ihop/history.json');
+    ).toBe(join('/home/walter', '.local', 'state', 'ihop', 'history.json'));
     expect(
       getHistoryPath({
         platform: 'linux',
         env: { XDG_STATE_HOME: '/state' },
         home: '/home/walter',
       }),
-    ).toBe('/state/ihop/history.json');
+    ).toBe(join('/state', 'ihop', 'history.json'));
     expect(
       getHistoryPath({ platform: 'darwin', env: {}, home: '/Users/walter' }),
-    ).toBe(
-      '/Users/walter/Library/Application Support/ihop/history.json',
-    );
+    ).toBe(join(
+      '/Users/walter',
+      'Library',
+      'Application Support',
+      'ihop',
+      'history.json',
+    ));
   });
 
   it('writes atomically, newest first, and retains 50 entries', async () => {
