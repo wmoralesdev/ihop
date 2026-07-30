@@ -70,12 +70,13 @@ describe('web filtering and time formatting', () => {
     expect(exposureLabel(record.address)).toBe('all interfaces');
 
     const row = formatPortRecord(record, 'walter');
-    expect(row).toContain('react-grab-mcp');
-    expect(row).toContain('ChatGPT/Codex');
-    expect(row).toContain('project');
-    expect(row).toContain('· all');
-    expect(row).not.toContain('secret-value');
-    expect(row).not.toContain('*:4723');
+    const plainRow = row.replace(/\u001B\[[0-?]*[ -/]*[@-~]/g, '');
+    expect(plainRow).toContain('react-grab-mcp');
+    expect(plainRow).toContain('ChatGPT/Codex');
+    expect(plainRow).toContain('project');
+    expect(plainRow).toContain('· all');
+    expect(plainRow).not.toContain('secret-value');
+    expect(plainRow).not.toContain('*:4723');
   });
 
   it('redacts sensitive command arguments in optional details', () => {
