@@ -1,5 +1,5 @@
 {
-  "name": "ihop",
+  "name": "@wmoralesdev/ihop",
   "version": "0.1.0",
   "description": "I Hate Open Ports — find and close local ports from a beautiful interactive CLI.",
   "type": "module",

@@ -1,6 +1,6 @@
 # IHOP
 
-[![npm version](https://img.shields.io/npm/v/ihop.svg)](https://www.npmjs.com/package/ihop)
+[![npm version](https://img.shields.io/npm/v/@wmoralesdev/ihop.svg)](https://www.npmjs.com/package/@wmoralesdev/ihop)
 [![CI](https://github.com/wmoralesdev/ihop/actions/workflows/ci.yml/badge.svg)](https://github.com/wmoralesdev/ihop/actions/workflows/ci.yml)
 [![Node.js 22+](https://img.shields.io/badge/node-%3E%3D22-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -9,7 +9,7 @@
 you forgot about and closing their ports safely.
 
 ```sh
-npx ihop
+npx @wmoralesdev/ihop
 ```
 
 ```text
@@ -37,14 +37,14 @@ npx ihop
 IHOP requires Node.js 22 or newer and supports macOS, Linux, and Windows.
 
 ```sh
-npm install --global ihop
+npm install --global @wmoralesdev/ihop
 ihop
 ```
 
 You can also run it without a global install:
 
 ```sh
-npx ihop
+npx @wmoralesdev/ihop
 ```
 
 ## Commands

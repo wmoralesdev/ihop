@@ -15,8 +15,8 @@
 3. Verify:
 
    ```sh
-   npm view ihop version
-   npx --yes ihop@latest --version
+   npm view @wmoralesdev/ihop version
+   npx --yes @wmoralesdev/ihop@latest --version
    ```
 
 4. Create and push the matching git tag:
@@ -32,8 +32,9 @@
 
 After the package exists on npm:
 
-1. Add `wmoralesdev/ihop` and `.github/workflows/publish.yml` as an npm trusted
-   publisher.
+1. Add GitHub repository `wmoralesdev/ihop` and workflow
+   `.github/workflows/publish.yml` as the trusted publisher for
+   `@wmoralesdev/ihop`.
 2. Create a protected GitHub environment named `npm`.
 3. Trigger **Publish to npm** manually from GitHub Actions for later releases.
 
