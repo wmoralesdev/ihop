@@ -1,0 +1,66 @@
+{
+  "name": "ihop",
+  "version": "0.1.0",
+  "description": "I Hate Open Ports — find and close local ports from a beautiful interactive CLI.",
+  "type": "module",
+  "bin": {
+    "ihop": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup src/cli.ts --format esm --platform node --target node22 --clean --sourcemap",
+    "dev": "tsx src/cli.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run typecheck && npm test && npm run build",
+    "release:check": "npm run check && npm publish --dry-run",
+    "prepack": "npm run check"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "cli",
+    "port",
+    "kill-port",
+    "process",
+    "developer-tools",
+    "open-ports",
+    "network",
+    "terminal"
+  ],
+  "author": "wmoralesdev",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmoralesdev/ihop.git"
+  },
+  "homepage": "https://github.com/wmoralesdev/ihop#readme",
+  "bugs": {
+    "url": "https://github.com/wmoralesdev/ihop/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "npm@11.16.0",
+  "dependencies": {
+    "@clack/prompts": "^1.7.0",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.2.0"
+  },
+  "overrides": {
+    "esbuild": "^0.28.1"
+  }
+}
