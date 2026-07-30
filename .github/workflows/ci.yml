@@ -32,6 +32,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check
+      - run: npm run test:integration
         env:
           IHOP_INTEGRATION: "1"
       - run: npm pack --dry-run

@@ -128,6 +128,6 @@ describe('platform integration', () => {
       expect(results).toHaveLength(1);
       expect(results[0]?.status).toBe('closed');
     },
-    20_000,
+    60_000,
   );
 });

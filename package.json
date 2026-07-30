@@ -17,6 +17,7 @@
     "dev": "tsx src/cli.ts",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
+    "test:integration": "vitest run test/integration.test.ts",
     "test:watch": "vitest",
     "check": "npm run typecheck && npm test && npm run build",
     "release:check": "npm run check && npm publish --dry-run",
